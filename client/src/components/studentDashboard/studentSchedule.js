@@ -26,6 +26,7 @@ export default function ShowSession() {
 
   const [sessionsList , setSessionsList] = useState([])
 
+  
 
   useEffect(() => {
       axios.get('http://localhost:5000/sessions').then( (allSessions) => {

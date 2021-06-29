@@ -11,3 +11,4 @@ router.post('/' , createCourse)
 router.delete('/:id',deleteCourse);
 
 export default router;
+
