@@ -4,20 +4,39 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import StudentDashboard from './components/studentDashboard/studentDashboard';
+import AdminDashboard from './components/adminDashboard/adminDashboard'
 
+const role=3;
+
+
+// role==1 is student
+if(role==1){
 ReactDOM.render(
-  
-    <App/>,
-    
-  document.getElementById('root')
-);
-
-/*ReactDOM.render(
 <StudentDashboard/>,
 document.getElementById('root')
 
+);}
+
+
+
+//user.role==2 is ta
+
+/*ReactDOM.render(
+  
+    <TADashboard/>,
+    
+  document.getElementById('root')
 );*/
 
+//user.role==3 is admin
+else{ReactDOM.render(
+  <AdminDashboard/>,
+  document.getElementById('root')
+  
+  );
+  }
+
+ 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

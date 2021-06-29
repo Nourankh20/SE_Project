@@ -25,32 +25,6 @@ export default function ShowSession() {
   const classes = useStyles();
 
   const [sessionsList , setSessionsList] = useState([])
-  const [session , setSession] = useState({
-
-    CourseId:"",
-    tutorialNo:"",
-    Day:"",
-    Slot:"",
-    Location:"",
-    TAid:""
-  });
-
-  
-
-  const deleteSession = (id) => {
-      axios.delete(`http://localhost:5000/sessions/${id}`).then( () => {
-          window.location.reload(false);
-      })
-  }
- 
-  const updateSession = (id) => {
-    axios.post(`http://localhost:5000/sessions/${id}`, session).then( () => {
-        window.location.reload(false);
-    })
-}
-
-
-
 
 
   useEffect(() => {

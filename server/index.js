@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({limit: "20mb" , extended:true}));
 
 app.use(cors());
 app.use('/sessions' , sessionRoutes);
-
+app.use('/student', studentRoutes);
 const CONNECTION_URL = 'mongodb+srv://admin:adminpass@cluster0.ucucw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 const PORT = process.env.PORT || 5000;
