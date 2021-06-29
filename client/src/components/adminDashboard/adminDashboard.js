@@ -18,7 +18,7 @@ function Admin() {
           <Container >
             <Grid container justify="space-between" alignItems="strect" >
               <Grid item xs={13} sm={15}>
-                <AppBar className={classes.appBar} position="static" color="inherit" >
+                <AppBar className={classes.appBar} position="sticky" color="inherit" >
                   <CreateSchedule />
                   </AppBar>
                   <Grid item xs={15} sm={15} >
