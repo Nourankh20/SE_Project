@@ -17,10 +17,10 @@ export const createSession = async (req , res)=> {
     const newSession = new SessionData(session);
 
     try {
-        if(CourseData.find({CourseId:req.body.CourseId})){
+       
             await newSession.save();
             res.status(201).json(newSession);
-        }
+        
         
     } catch (error) {
         res.status(409).json({message: error.message});
@@ -68,7 +68,7 @@ export const updateSession = async (req , res)=> {
         tmp.Slot=req.body.Slot;
         tmp.Location=req.body.Location;
         tmp.TAid=req.body.TAid;
-        tmp.Faculty=req.body.Stype;
+        tmp.Faculty=req.body.Faculty;
         SessionData.findByIdAndUpdate(req.params.id,tmp).exec()
         tmp.save().then(tmp => {
         res.json('Session Updated Successfully');

@@ -18,9 +18,12 @@ export const createCourse = async (req , res)=> {
     const newCourse = new CourseData(course);
 
     try {
+        if(CourseData.find({CourseId:req.body.CourseId})){
         await newCourse.save();
         res.status(201).json(newCourse);
+        }
     } catch (error) {
+        alert("e5tar id tany plez");
         res.status(409).json({message: error.message});
     }
 }
@@ -39,7 +42,7 @@ export const deleteCourse = async (req , res)=> {
 }
 
 
-export const findSession = async (req , res)=> {
+export const findCourse = async (req , res)=> {
     const id = req.params.id;
  
     try {
@@ -65,8 +68,9 @@ export const updateCourse = async (req , res)=> {
         tmp.description=req.body.description;
         tmp.creditHours=req.body.creditHours;
         tmp.Faculty=req.body.Faculty;
+        tmp.CourseName=req.body.CourseName;
         
-        SessionData.findByIdAndUpdate(req.params.id,tmp).exec()
+        CourseData.findByIdAndUpdate(req.params.id,tmp).exec()
         tmp.save().then(tmp => {
         res.json('Course Updated Successfully');
             })

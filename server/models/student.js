@@ -6,8 +6,9 @@ const studentSchema = mongoose.Schema({
     grade: String,
     tutorial: {
         type: String,
-        default: 'A'
-    } 
+        default: '1'
+    } ,
+    Faculty:String
 });
 
 const student = mongoose.model('student' , studentSchema);

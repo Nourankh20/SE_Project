@@ -82,8 +82,8 @@ export default function ShowSession() {
             <TableCell align="center">T-Number</TableCell>
             <TableCell align="center">Slot</TableCell>
             <TableCell align="center">Location</TableCell>
-             <TableCell align="center">TA id</TableCell> 
-             <TableCell align="center">type</TableCell> 
+            <TableCell align="center">TA id</TableCell> 
+            <TableCell align="center">Faculty</TableCell> 
             <TableCell align="center">Edit</TableCell>
             <TableCell align="center">Delete</TableCell>
 
@@ -158,16 +158,18 @@ export default function ShowSession() {
               setSession({ ...session, TAid: event.target.value}) 
               }} />
               }</TableCell> 
-              <InputLabel>{session.Stype}
+              <InputLabel>{session.Faculty}
               <TableCell align="center">{
                 
-                <Select id="Stype" type="text" variant="outlined" label={session.Stype}  onChange={(event) => {
-                 setSession({ ...session, Stype: event.target.value}) 
+                <Select id="Faculty" type="text" variant="outlined" label={session.Faculty}  onChange={(event) => {
+                 setSession({ ...session, Faculty: event.target.value}) 
               }}>
-                    <MenuItem value="Lecture">Lecture</MenuItem>
-                    <MenuItem value="Lab">Lab</MenuItem>
-                    <MenuItem value="Tutorial">Tutorial</MenuItem>
-                    
+                    <MenuItem value="" disabled>Faculty</MenuItem>
+            <MenuItem value="Computer Science">Computer Science</MenuItem>
+            <MenuItem value="Business">Business</MenuItem>
+            <MenuItem value="Engineering">Engineering</MenuItem>
+            <MenuItem value="Design">Design</MenuItem>
+            
                     
                 </Select>
                }</TableCell> 
@@ -182,7 +184,7 @@ export default function ShowSession() {
                    session.Slot=document.getElementById("Slot").value;
                    session.Location=document.getElementById("Location").value;
                    session.TAid=document.getElementById("TAid").value; 
-                   session.Stype=document.getElementById("Stype").value; 
+                   session.Faculty=document.getElementById("Faculty").value; 
                    
                    updateSession(session._id) 
                   }
