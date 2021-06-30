@@ -5,7 +5,7 @@ const sessionSchema = mongoose.Schema({
     tutorialNo:Number,
     Day:String,
     Slot:String,
-    Stype:String,
+    Faculty:String,
     Location:String,
     TAid:Number
 });
@@ -13,3 +13,4 @@ const sessionSchema = mongoose.Schema({
 const session = mongoose.model('session' , sessionSchema);
 
 export default session;
+

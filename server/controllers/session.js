@@ -1,4 +1,4 @@
-import session from '../models/session.js';
+import CourseData from '../models/course.js'
 import SessionData from '../models/session.js';
 
 export const getSessions = async (req , res)=> {
@@ -17,8 +17,11 @@ export const createSession = async (req , res)=> {
     const newSession = new SessionData(session);
 
     try {
-        await newSession.save();
-        res.status(201).json(newSession);
+        if(CourseData.find({CourseId:req.body.CourseId})){
+            await newSession.save();
+            res.status(201).json(newSession);
+        }
+        
     } catch (error) {
         res.status(409).json({message: error.message});
     }
@@ -65,7 +68,7 @@ export const updateSession = async (req , res)=> {
         tmp.Slot=req.body.Slot;
         tmp.Location=req.body.Location;
         tmp.TAid=req.body.TAid;
-        tmp.Stype=req.body.Stype;
+        tmp.Faculty=req.body.Stype;
         SessionData.findByIdAndUpdate(req.params.id,tmp).exec()
         tmp.save().then(tmp => {
         res.json('Session Updated Successfully');

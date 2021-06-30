@@ -64,7 +64,7 @@ export const updateCourse = async (req , res)=> {
         tmp.CourseId=req.body.CourseId;
         tmp.description=req.body.description;
         tmp.creditHours=req.body.creditHours;
-        tmp.major=req.body.major;
+        tmp.Faculty=req.body.Faculty;
         
         SessionData.findByIdAndUpdate(req.params.id,tmp).exec()
         tmp.save().then(tmp => {

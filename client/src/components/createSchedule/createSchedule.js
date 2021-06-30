@@ -27,7 +27,7 @@ export default function Create() {
     Slot:"",
     Location:"",
     TAid:"",
-    Stype:""
+    Faculty:""
 
   });
 
@@ -58,13 +58,14 @@ export default function Create() {
       }} />  
      
      
-        <Select id="Stype" displayEmpty  type="text" variant="outlined"  label="Type" value={session.Stype} onChange={(event) => {
-         setSession({ ...session, Stype: event.target.value}) 
+        <Select id="Stype" displayEmpty  type="text" variant="outlined"  label="Type" value={session.Faculty} onChange={(event) => {
+         setSession({ ...session, Faculty: event.target.value}) 
       }}>
-            <MenuItem value="" disabled>Type</MenuItem>
-            <MenuItem value="Lecture">Lecture</MenuItem>
-            <MenuItem value="Lab">Lab</MenuItem>
-            <MenuItem value="Tutorial">Tutorial</MenuItem>
+            <MenuItem value="" disabled>Faculty</MenuItem>
+            <MenuItem value="Computer Science">Computer Science</MenuItem>
+            <MenuItem value="Business">Business</MenuItem>
+            <MenuItem value="Engineering">Engineering</MenuItem>
+            <MenuItem value="Design">Design</MenuItem>
             
             
         </Select>
