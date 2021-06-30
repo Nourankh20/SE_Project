@@ -11,6 +11,7 @@ export const getSessions = async (req , res)=> {
     }
 }
 
+
 export const createSession = async (req , res)=> {
     const session = req.body;
 

@@ -75,8 +75,6 @@ export default function ShowSession() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-           
-   
             <TableCell align="center">Course Id</TableCell>    
             <TableCell align="center">Day</TableCell>
             <TableCell align="center">T-Number</TableCell>

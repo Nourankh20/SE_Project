@@ -14,9 +14,10 @@ export const getTAs = async (req , res)=> {
 }
 
 export const getTASessions = async (req , res)=> {
+    
+    const ta=req.body.TAid
     try {
-        const allTAs = await SessionData.find();
-
+        const allTAs = await SessionData.find({TAid:1}).select();
         res.status(200).json(allTAs);
     } catch (error) {
         res.status(404).json({message: error.message});

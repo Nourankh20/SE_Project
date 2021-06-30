@@ -7,7 +7,7 @@ import StudentDashboard from './components/studentDashboard/studentDashboard';
 import AdminDashboard from './components/adminDashboard/adminDashboard'
 import TADashboard from './components/TADashboard/TADashboard'
 
-const role=3;
+const role=2;
 
 
 // role==1 is student

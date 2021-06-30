@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({limit: "20mb" , extended:true}));
 
 app.use(cors());
 app.use('/sessions' , sessionRoutes);
-//app.use('/student', studentRoutes);
+app.use('/student', studentRoutes);
 app.use('/course' , courseRoutes);
 app.use('/TA', TARoutes);
 

@@ -2,7 +2,7 @@ import StudentData from '../models/student.js';
 
 export const getStudents = async (req , res)=> {
     try {
-        const allStudents = await StudentData.find();
+        const allStudents = await StudentData.find({tutorial:3}).select();
 
         res.status(200).json(allStudents);
     } catch (error) {
