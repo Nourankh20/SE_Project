@@ -58,11 +58,6 @@ export default function ShowSession() {
     })
 }
 
-
-
-
-
-
   useEffect(() => {
       axios.get('http://localhost:5000/sessions').then( (allSessions) => {
           setSessionsList(allSessions.data);

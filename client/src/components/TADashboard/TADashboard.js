@@ -26,8 +26,6 @@ function TA() {
                 <AppBar className={classes.appBar} position="static" color="inherit" >
                   <ShowTutorials />
                   </AppBar>
-                  
-                
             </Grid>
             <Grid item xs={13} sm={15}>
                 <AppBar className={classes.appBar} position="static" color="inherit" >

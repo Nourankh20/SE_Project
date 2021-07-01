@@ -5,7 +5,7 @@ var express = require("express"),
 	LocalStrategy = require("passport-local"),
 	passportLocalMongoose =
 		require("passport-local-mongoose"),
-	User = require("./user");
+	User = require("./models/User");
 
     
 mongoose.set('useNewUrlParser', true);
