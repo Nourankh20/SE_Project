@@ -1,14 +1,13 @@
 import express from 'express'
-import { getGrades,deleteGrade, createGrade , findGrade, updateGrade} from '../controllers/grade.js';
-import sessions from '../models/session.js';
+import { getGrade, createGrade , findGrade, updateGrade} from '../controllers/grade.js';
+import grade from '../models/grade.js';
 
 const router = express.Router();
 
-
-router.get('/' , getGrades)
+router.get('/' , getGrade)
 router.get('/:id' , findGrade)
 router.post('/:id' , updateGrade)
 router.post('/' , createGrade)
-router.delete('/:id',deleteGrade);
+
 
 export default router;

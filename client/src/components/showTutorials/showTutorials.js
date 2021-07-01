@@ -10,10 +10,6 @@ import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 
 
-const session={
-    tutorialNo:""
-
-}
 
 const useStyles = makeStyles({
   table: {
@@ -33,13 +29,10 @@ export default function ShowTutorials() {
   const [TA , setTAList] = useState({
     CourseId:"",
     tutorialNo:"",
-    Faculty:"",
-    Slot:"",
-    Day:"",
-    Location:""
+    CourseName:""
   });
    useEffect(() => {
-      axios.get(`http://localhost:5000/student`).then( (allTAs) => {
+      axios.get(`http://localhost:5000/sessions`).then( (allTAs) => {
           setTAsList(allTAs.data);
       } )
   }, [])
@@ -59,22 +52,16 @@ export default function ShowTutorials() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {TAsList.map((TA , key) => (
+          {TAsList.map((session , key) => (
             <TableRow key={key}>
               <TableCell  align="center">{
-               <label >{TA.tutorial==3?"3":"" }</label>}
-               
+               <label >{session.tutorialNo===3?session.tutorialNo:"" }</label>}
               </TableCell>
               <TableCell  align="center">{
-               <label >{TA.Faculty=="Business"?"Computer Science":"Bus"}</label>}
+               <label >{session.tutorialNo===3?session.CourseId:""}</label>}
                
               </TableCell>
-              <TableCell  align="center">{
-               <label>{TA.studentName}</label>
-
-               
-              }
-              </TableCell>
+            
               
             </TableRow>
           ))}

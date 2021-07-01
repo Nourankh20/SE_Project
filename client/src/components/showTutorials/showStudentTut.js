@@ -40,9 +40,7 @@ export default function ShowStudent() {
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell align="right">Registration Number</TableCell>
-            <TableCell align="right">Grade</TableCell>
             <TableCell align="right">Tutorial Number</TableCell>
-            <TableCell align="right">Delete</TableCell>
 
           </TableRow>
         </TableHead>
@@ -52,12 +50,14 @@ export default function ShowStudent() {
               <TableCell component="th" scope="row">
                 {student.studentName}
               </TableCell>
-              <TableCell align="right">{student.regNo}</TableCell>
-              <TableCell align="right">{student.grade}</TableCell>
-              <TableCell align="right">{student.tutorial}</TableCell>
-              <TableCell align="right">
+              <TableCell  align="center">{
+               <label >{student.tutorial==="3"?student.regNo:"" }</label>}
               </TableCell>
-              
+              <TableCell  align="center">{
+
+               <label >{student.tutorial==="3"? student.tutorial:""}</label>}
+               
+              </TableCell>
             </TableRow>
           ))
           }

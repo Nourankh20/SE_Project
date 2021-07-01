@@ -58,7 +58,7 @@ export default function ShowSession() {
             <TableRow key={key}> 
               <TableCell component="th" scope="row">  
                 <TableCell  align="center">{
-                    <label>{course.Faculty=="Computer Science"?course.CourseId:""}</label>
+                    <label>{course.Faculty==="Computer Science"?course.CourseId:""}</label>
              
               
               }
@@ -66,23 +66,23 @@ export default function ShowSession() {
               
                  </TableCell>  
                  <TableCell  align="center">{
-                    <label>{course.Faculty=="Computer Science"?course.CourseName:""}</label>
+                    <label>{course.Faculty==="Computer Science"?course.CourseName:""}</label>
              
               
               }
               </TableCell>   
               <TableCell  align="center">{
-                    <label>{course.Faculty=="Computer Science"?course.description:""}</label> 
+                    <label>{course.Faculty==="Computer Science"?course.description:""}</label> 
               }
               </TableCell>
              
               <TableCell  align="center">{
-                    <label>{course.Faculty=="Computer Science"?course.creditHours:""}</label> 
+                    <label>{course.Faculty==="Computer Science"?course.creditHours:""}</label> 
               }
               </TableCell>
 
               <TableCell  align="center">{
-                    <label>{course.Faculty=="Computer Science"?course.Faculty:""}</label>
+                    <label>{course.Faculty==="Computer Science"?course.Faculty:""}</label>
               }
               </TableCell>
              

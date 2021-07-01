@@ -1,73 +1,71 @@
-import CourseData from '../models/course.js'
-import GradeData from '../models/session.js';
+import grade from '../models/grade.js';
+import gradeData from '../models/grade.js';
 
-export const getGrades = async (req , res)=> {
+export const getGrade = async (req , res)=> {
     try {
-        const allGrades = await GradeData.find();
+        const allGrades = await gradeData.find();
+
         res.status(200).json(allGrades);
     } catch (error) {
         res.status(404).json({message: error.message});
     }
 }
 
-
-
 export const createGrade = async (req , res)=> {
-    const session = req.body;
+    const grade = req.body;
 
-    const newSession = new GradeData(session);
+    const newGrade = new gradeData(grade);
 
     try {
-       
-            await newSession.save();
-            res.status(201).json(newSession);
-        
-        
+        await newGrade.save();
+        res.status(201).json(newGrade);
     } catch (error) {
         res.status(409).json({message: error.message});
     }
 }
 
 
-export const deleteGrade = async (req , res)=> {
-    const id = req.params.id;
-
-    try {
-
-       await GradeData.findByIdAndRemove(id).exec(); 
-       res.send('Successfully Removed!')
-    } catch (error) {
-        console.log(error);
-    }
-}
-
 
 export const findGrade = async (req , res)=> {
-    const id = req.params.id;
- 
-    try {
-       
-       await GradeData.findById(id).exec(); 
-       res.send('Successfully Recieved!')
-      
-    }
-     catch (error) {
-        console.log(error);
+    if(req.query.id){
+        const id = req.query.id;
+
+        gradeData.findById(id)
+            .then(data =>{
+                if(!data){
+                    res.status(404).send({ message : "Not found user with id "+ id})
+                }else{
+                    res.send(data)
+                }
+            })
+            .catch(err =>{
+                res.status(500).send({ message: "Erro retrieving user with id " + id})
+            })
+
+    }else{
+        gradeData.find()
+            .then(user => {
+                res.send(user)
+            })
+            .catch(err => {
+                res.status(500).send({ message : err.message || "Error Occurred while retriving user information" })
+            })
     }
 
 }
 
 export const updateGrade = async (req , res)=> {
     const id = req.params.id;
-    await GradeData.findById(req.params.id, function (err, tmp){
+    await gradeData.findById(req.params.id, function (err, tmp){
     if(!tmp)
         console.log("error")
     else{
         tmp.CourseId=req.body.CourseId;
         tmp.tutorialNo=req.body.tutorialNo;
+        tmp.grade=req.body.grade;
+        tmp.studentID=req.body.studentID;
         tmp.TAid=req.body.TAid;
-        tmp.Faculty=req.body.Faculty;
-        GradeData.findByIdAndUpdate(req.params.id,tmp).exec()
+        gradeData.findByIdAndUpdate(req.params.id,tmp).exec()
         tmp.save().then(tmp => {
         res.json('Grade Updated Successfully');
             })
@@ -77,8 +75,3 @@ export const updateGrade = async (req , res)=> {
         }   
     });
 }
-
-    
-
-
-

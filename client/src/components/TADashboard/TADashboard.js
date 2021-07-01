@@ -4,13 +4,15 @@ import {Container , AppBar , Typography , Grow , Grid} from '@material-ui/core';
 import ShowTutorials from '../showTutorials/showTutorials.js'
 //import StudentSchedule from './studentSchedule';
 import ShowStudentTut from '../showTutorials/showStudentTut.js'
+import CreateGrade from '../createGrade/createGrade.js'
+import ShowGrade from '../showGrade/showGrade.js'
 
 import '../../App.css';
 import useStyles from '../../styles';
 function TA() {
   const classes = useStyles();
   return (
-    
+
     <div className="App">
       <Container maxWidth = "lg">
         <AppBar className = {classes.appBar} position="static" color="inherit" >
@@ -23,6 +25,27 @@ function TA() {
               <Grid item xs={13} sm={15}>
                 <AppBar className={classes.appBar} position="static" color="inherit" >
                   <ShowTutorials />
+                  </AppBar>
+                  
+                
+            </Grid>
+            <Grid item xs={13} sm={15}>
+                <AppBar className={classes.appBar} position="static" color="inherit" >
+                  <ShowStudentTut />
+                  </AppBar>
+                  
+                
+            </Grid>
+            <Grid item xs={13} sm={15}>
+                <AppBar className={classes.appBar} position="static" color="inherit" >
+                  <CreateGrade />
+                  </AppBar>
+                  
+                
+            </Grid>
+            <Grid item xs={13} sm={15}>
+                <AppBar className={classes.appBar} position="static" color="inherit" >
+                  <ShowGrade />
                   </AppBar>
                   
                 
