@@ -8,14 +8,16 @@ import AdminDashboard from './components/adminDashboard/adminDashboard'
 import TADashboard from './components/TADashboard/TADashboard'
 import HomePage from './components/homePage/homePage.js'
 
-const role=3;
+const role=2;
 
+
+if(role===3){
 ReactDOM.render(
   <AdminDashboard/>,
   document.getElementById('root')
   
   );
-
+}
 
 // role==1 is student
 if(role===1){
@@ -41,14 +43,6 @@ if(role===2 ){
 
 
 //user.role==3 is admin
-if(role===3){
-  
-  ReactDOM.render(
-  <AdminDashboard/>,
-  document.getElementById('root')
-  
-  );
-  }
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

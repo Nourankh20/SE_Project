@@ -22,7 +22,7 @@ app.use('/student', studentRoutes);
 app.use('/course' , courseRoutes);
 app.use('/TA', TARoutes);
 app.use('/grade', GradeRoutes);
-app.use('/users', UserRoutes);
+app.use('/Users', UserRoutes);
 
 //app.use();
 
