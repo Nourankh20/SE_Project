@@ -75,7 +75,7 @@ export default function ShowGrade() {
 
               <TableCell  align="center">
                   {
-                    <label >{grade.grade!==""?grade.grade:"" }</label>
+                    <label >{grade.grade!==""?grade.studentID===3?grade.grade:"":"" }</label>
                   }
               </TableCell>
              

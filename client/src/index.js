@@ -6,10 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import StudentDashboard from './components/studentDashboard/studentDashboard';
 import AdminDashboard from './components/adminDashboard/adminDashboard'
 import TADashboard from './components/TADashboard/TADashboard'
+import HomePage from './components/homePage/homePage.js'
 
 const role=3;
 
-
+ReactDOM.render(
+  <AdminDashboard/>,
+  document.getElementById('root')
+  
+  );
+/** 
+///
 
 // role==1 is student
 if(role===1){
@@ -43,7 +50,7 @@ if(role===3){
   
   );
   }
-
+*/
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

@@ -7,7 +7,7 @@ import sessionRoutes from './routes/sessions.js';
 import courseRoutes from './routes/course.js'
 import TARoutes from './routes/TA.js'
 import GradeRoutes from './routes/grade.js'
-//import UserRoutes from './login.js'
+import UserRoutes from './routes/userRoutes.js'
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.use('/student', studentRoutes);
 app.use('/course' , courseRoutes);
 app.use('/TA', TARoutes);
 app.use('/grade', GradeRoutes);
-//app.use('/User', UserRoutes);
+app.use('/users', UserRoutes);
 
 //app.use();
 
