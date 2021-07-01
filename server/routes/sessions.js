@@ -6,6 +6,7 @@ import sessions from '../models/session.js';
 
 const router = express.Router();
 
+
 router.get('/' , getSessions)
 router.get('/:id' , findSession)
 router.post('/:id' , updateSession)

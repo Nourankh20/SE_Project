@@ -7,6 +7,7 @@ var express = require("express"),
 		require("passport-local-mongoose"),
 	User = require("./user");
 
+    
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);

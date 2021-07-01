@@ -11,6 +11,7 @@ export const getStudents = async (req , res)=> {
 }
 
 
+
 export const getNstudents = (req,res)=>{
     try{
         const allStudents= StudentData.find({tutorial:1}).select();

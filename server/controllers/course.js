@@ -17,6 +17,7 @@ export const createCourse = async (req , res)=> {
 
     const newCourse = new CourseData(course);
 
+    
     try {
         if(CourseData.find({CourseId:req.body.CourseId})){
         await newCourse.save();

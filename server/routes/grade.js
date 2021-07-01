@@ -4,6 +4,7 @@ import sessions from '../models/session.js';
 
 const router = express.Router();
 
+
 router.get('/' , getGrades)
 router.get('/:id' , findGrade)
 router.post('/:id' , updateGrade)

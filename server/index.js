@@ -21,6 +21,7 @@ app.use('/course' , courseRoutes);
 app.use('/TA', TARoutes);
 
 //app.use();
+
 const CONNECTION_URL = 'mongodb+srv://admin:adminpass@cluster0.ucucw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 const PORT = process.env.PORT || 5000;

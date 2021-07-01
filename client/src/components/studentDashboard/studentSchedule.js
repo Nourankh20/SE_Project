@@ -33,6 +33,7 @@ export default function ShowSession() {
           setSessionsList(allSessions.data);
       } )
   }, [])
+  
 
   return (
     <> 

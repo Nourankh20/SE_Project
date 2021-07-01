@@ -8,6 +8,7 @@ const courseSchema = mongoose.Schema({
     Faculty:String
 });
 
+
 const course = mongoose.model('course' , courseSchema);
 
 export default course;

@@ -34,6 +34,7 @@ export default function ShowSession() {
       } )
   }, [])
 
+
   return (
     <> 
     <h2>All Courses</h2> 
@@ -41,7 +42,7 @@ export default function ShowSession() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-           
+            
    
             <TableCell align="center">Course Id</TableCell>    
             <TableCell align="center">Course name</TableCell>
@@ -54,11 +55,10 @@ export default function ShowSession() {
         </TableHead>
         <TableBody>
           {coursesList.map((course , key) => (
-            <TableRow key={key}>
-                 
+            <TableRow key={key}> 
               <TableCell component="th" scope="row">  
                 <TableCell  align="center">{
-                    <label>{course.CourseId}</label>
+                    <label>{course.Faculty=="Computer Science"?course.CourseId:""}</label>
              
               
               }
@@ -66,22 +66,23 @@ export default function ShowSession() {
               
                  </TableCell>  
                  <TableCell  align="center">{
-                    <label>{course.CourseName}</label>
+                    <label>{course.Faculty=="Computer Science"?course.CourseName:""}</label>
              
               
               }
               </TableCell>   
               <TableCell  align="center">{
-                    <label>{course.description}</label> 
+                    <label>{course.Faculty=="Computer Science"?course.description:""}</label> 
               }
               </TableCell>
              
               <TableCell  align="center">{
-                    <label>{course.creditHours}</label> 
+                    <label>{course.Faculty=="Computer Science"?course.creditHours:""}</label> 
               }
               </TableCell>
+
               <TableCell  align="center">{
-                    <label>{course.Faculty}</label>
+                    <label>{course.Faculty=="Computer Science"?course.Faculty:""}</label>
               }
               </TableCell>
              

@@ -22,6 +22,7 @@ function Student() {
                 <AppBar className={classes.appBar} position="static" color="inherit" >
                   <StudentSchedule />
                   </AppBar>
+         
                   <Grid item xs={15} sm={15} >
                   <AppBar className={classes.appBar} position="static" color="inherit" >
                   <StudentCourses />
