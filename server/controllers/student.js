@@ -10,6 +10,16 @@ export const getStudents = async (req , res)=> {
     }
 }
 
+
+export const getNstudents = (req,res)=>{
+    try{
+        const allStudents= StudentData.find({tutorial:1}).select();
+    }
+    catch(error){
+        res.status(404).json({message: error.message});
+    }
+}
+
 export const createStudent = async (req , res)=> {
     const student = req.body;
 

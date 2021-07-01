@@ -7,7 +7,7 @@ import StudentDashboard from './components/studentDashboard/studentDashboard';
 import AdminDashboard from './components/adminDashboard/adminDashboard'
 import TADashboard from './components/TADashboard/TADashboard'
 
-const role=2;
+const role=1;
 
 
 // role==1 is student
@@ -34,11 +34,8 @@ if(role===2 ){
 
 
 //user.role==3 is admin
-else{
+if(role===3){
   
- 
-  
-
   ReactDOM.render(
   <AdminDashboard/>,
   document.getElementById('root')

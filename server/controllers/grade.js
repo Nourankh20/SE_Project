@@ -1,24 +1,20 @@
 import CourseData from '../models/course.js'
-import SessionData from '../models/session.js';
-import StudentData from '../models/student.js';
+import GradeData from '../models/session.js';
 
-
-
-export const getSessions = async (req , res)=> {
+export const getGrades = async (req , res)=> {
     try {
-        const allStudents = await SessionData.find();
-
-        res.status(200).json(allStudents);
+        const allGrades = await GradeData.find();
+        res.status(200).json(allGrades);
     } catch (error) {
         res.status(404).json({message: error.message});
     }
 }
 
 
-export const createSession = async (req , res)=> {
+export const createGrade = async (req , res)=> {
     const session = req.body;
 
-    const newSession = new SessionData(session);
+    const newSession = new GradeData(session);
 
     try {
        
@@ -32,12 +28,12 @@ export const createSession = async (req , res)=> {
 }
 
 
-export const deleteSession = async (req , res)=> {
+export const deleteGrade = async (req , res)=> {
     const id = req.params.id;
 
     try {
 
-       await SessionData.findByIdAndRemove(id).exec(); 
+       await GradeData.findByIdAndRemove(id).exec(); 
        res.send('Successfully Removed!')
     } catch (error) {
         console.log(error);
@@ -45,12 +41,12 @@ export const deleteSession = async (req , res)=> {
 }
 
 
-export const findSession = async (req , res)=> {
-    const id = req.body;
+export const findGrade = async (req , res)=> {
+    const id = req.params.id;
  
     try {
        
-       await StudentData.find({tutorial:id}).select().exec(); 
+       await GradeData.findById(id).exec(); 
        res.send('Successfully Recieved!')
       
     }
@@ -60,25 +56,22 @@ export const findSession = async (req , res)=> {
 
 }
 
-export const updateSession = async (req , res)=> {
+export const updateGrade = async (req , res)=> {
     const id = req.params.id;
-    await SessionData.findById(req.params.id, function (err, tmp){
+    await GradeData.findById(req.params.id, function (err, tmp){
     if(!tmp)
         console.log("error")
     else{
         tmp.CourseId=req.body.CourseId;
         tmp.tutorialNo=req.body.tutorialNo;
-        tmp.Day=req.body.Day;
-        tmp.Slot=req.body.Slot;
-        tmp.Location=req.body.Location;
         tmp.TAid=req.body.TAid;
         tmp.Faculty=req.body.Faculty;
-        SessionData.findByIdAndUpdate(req.params.id,tmp).exec()
+        GradeData.findByIdAndUpdate(req.params.id,tmp).exec()
         tmp.save().then(tmp => {
-        res.json('Session Updated Successfully');
+        res.json('Grade Updated Successfully');
             })
         .catch(err => {
-        res.status(400).send("Unable To Update Session");
+        res.status(400).send("Unable To Update Grade");
         } );     
         }   
     });

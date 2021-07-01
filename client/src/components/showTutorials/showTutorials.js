@@ -21,11 +21,10 @@ const useStyles = makeStyles({
   },
 });
 
-const getStudents = () => {
-    axios.get(`http://localhost:5000/sessions`, session).then( () => {
-        window.location.reload(false);
-    })
-}
+
+
+
+
 
 
 export default function ShowTutorials() {
@@ -40,11 +39,12 @@ export default function ShowTutorials() {
     Location:""
   });
    useEffect(() => {
-      axios.get('http://localhost:5000/TA').then( (allTAs) => {
+      axios.get(`http://localhost:5000/student`).then( (allTAs) => {
           setTAsList(allTAs.data);
       } )
   }, [])
 
+ 
 
   
   return (
@@ -62,13 +62,16 @@ export default function ShowTutorials() {
           {TAsList.map((TA , key) => (
             <TableRow key={key}>
               <TableCell  align="center">{
-               <button onClick={(event)=>{
-                console.log(getStudents())
-               }} >{TA.tutorialNo}</button>}
+               <label >{TA.tutorial==3?"3":"" }</label>}
                
               </TableCell>
               <TableCell  align="center">{
-               <label>{TA.CourseId}</label>
+               <label >{TA.Faculty=="Business"?"Computer Science":"Bus"}</label>}
+               
+              </TableCell>
+              <TableCell  align="center">{
+               <label>{TA.studentName}</label>
+
               }
               </TableCell>
               

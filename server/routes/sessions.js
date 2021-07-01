@@ -1,5 +1,7 @@
 import express from 'express'
 import { getSessions,deleteSession, createSession , findSession, updateSession} from '../controllers/session.js';
+
+
 import sessions from '../models/session.js';
 
 const router = express.Router();
